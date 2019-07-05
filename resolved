@@ -1,0 +1,11 @@
+Keep your passwd backup active;)
+
+My problem regarding the "Temporary failure resolving http.kali.org 'prevents install of metapackages'" occurring on all devices using Nethuntet has been resolved by changing the permission in the / etc / passwd file:
+
+_apt: x: 104: 3004 :: / nonexistent: / bin / false
+
+for
+
+_apt: x: 0: 65534 :: / nonexistent: / bin / false
+
+It is not necessary to perform the update of the local repository, because this change allows the bypass in the permission of the device.
